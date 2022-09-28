@@ -2,6 +2,7 @@ import Card, { CardVariant } from "./components/Card"
 import EventsExample from "./components/EventsExample";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import UserPage from "./components/UserPage";
+import UserItemPage from "./components/UserItemPage";
 import TodosPage from "./components/TodosPage";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path={'/drag_events'} element={<EventsExample />}/>
         <Route path={'/users'} element={<UserPage />}/>
+        <Route path={'/users/:id'} element={<UserItemPage />}/>
         <Route path={'/todos'} element={<TodosPage />}/>
           
         <Route path={'/card'} element={
