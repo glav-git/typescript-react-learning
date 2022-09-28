@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 
 export enum CardVariant {
     outlined= 'outlined',
@@ -10,7 +10,7 @@ interface CardProps {
     height?: string;
     children?: React.ReactNode;
     variant: CardVariant;
-    onClick?: () => void; //  empty brackets describe function with no parameters and void means function return type
+    onClick: (num: number) => void; //  empty brackets describe function with no parameters and void means function return type
 }
 
 const Card: FC<CardProps> = 
@@ -21,12 +21,20 @@ const Card: FC<CardProps> =
         onClick,
         children,
     }) => {
+    
+    const [state, setState] = useState(0);
+    
+    const incremental_log = (state: number) => {
+       onClick(state) 
+       setState(state + 1)
+    }
+    
     return (
         <div style={{width, height, 
             border: variant === CardVariant.outlined ? '1px solid gray' : 'none',
             background: variant === CardVariant.primary ? 'lightgray' : ''
             }}
-             onClick={onClick}
+             onClick={ () => incremental_log(state) }
         >
             {children}
         </div>
