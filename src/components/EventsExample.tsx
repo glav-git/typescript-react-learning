@@ -22,17 +22,19 @@ const EventsExample: FC = () => {
     const dropHandler = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
         setIsDrag(false);
-        console.log('Fisting droped');
+        console.log('Fisting droped no ANAL');
     }
 
     const dragWithPreventHandler = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
         setIsDrag(true);
+        console.log("ANAL INTERSECTION STAAART!!!!!!!");
     }
 
     const leaveHandler = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
         setIsDrag(false);
+        console.log("ANAL INTERSECTION Stooped...");
     }
 
     return (
